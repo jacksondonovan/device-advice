@@ -1,4 +1,15 @@
 {
-  "posts": [],
+  "posts": [
+    {
+      "title": "This is a posts",
+      "description": "This is my favoriteposts ever!",
+      "id": 1
+    },
+    {
+      "title": "Newest Post",
+      "description": "I think this is a good one for sure",
+      "id": 2
+    }
+  ],
   "favorites": []
 }
