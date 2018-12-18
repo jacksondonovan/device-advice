@@ -1,4 +1,5 @@
 import posts from '../apis/posts';
+import history from '../history';
 import { SIGN_IN, SIGN_OUT, CREATE_POST, FETCH_POSTS, FETCH_POST, EDIT_POST, DELETE_POST } from './types';
 
 export const signIn = (userId) => {
@@ -14,10 +15,12 @@ export const signOut = () => {
   };
 };
 
-export const createPost = formValues => async dispatch => {
-  const response = await posts.post('/posts', formValues);
+export const createPost = formValues => async (dispatch, getState) => {
+  const { userId } = getState().auth;
+  const response = await posts.post('/posts', {...formValues, userId });
 
   dispatch({ type: CREATE_POST, payload: response.data });
+  history.push('/');
 }
 
 export const fetchPosts = () => async dispatch => {
