@@ -1,10 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchPost } from '../../actions';
+import { fetchPost, editPost } from '../../actions';
+import PostForm from './PostForm';
 
 class PostEdit extends React.Component {
   componentDidMount() {
     this.props.fetchPost(this.props.match.params.id);
+  }
+
+  onSubmit = (formValues) => {
+    this.props.editPost(this.props.match.params.id, formValues);
   }
 
   render() {
@@ -13,7 +18,11 @@ class PostEdit extends React.Component {
     }
     return (
       <div>
-        {this.props.post.title}
+        <h3>Edit Your Post</h3>
+        <PostForm
+          initialValues={this.props.post}
+          onSubmit={this.onSubmit}
+        />
       </div>
     );
   }
@@ -22,4 +31,4 @@ class PostEdit extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   return { post: state.posts[ownProps.match.params.id]}
 }
-export default connect(mapStateToProps, { fetchPost })(PostEdit);
+export default connect(mapStateToProps, { fetchPost, editPost })(PostEdit);
