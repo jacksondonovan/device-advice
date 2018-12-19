@@ -15,7 +15,7 @@ const App = () => {
         <div>
           <Header />
           <Route path="/" exact component={PostList} />
-          <Route path="/posts/delete" exact component={PostDelete} />
+          <Route path="/posts/delete/:id" exact component={PostDelete} />
           <Route path="/posts/edit/:id" exact component={PostEdit} />
           <Route path="/posts/new" exact component={PostCreate} />
           <Route path="/posts/show" exact component={PostShow} />

@@ -15,9 +15,9 @@ class PostList extends React.Component {
           <Link to={`/posts/edit/${post.id}`} className="ui button primary">
             Edit
           </Link>
-          <button className="ui button negative">
+          <Link to={`/posts/delete/${post.id}`} className="ui button negative">
             Delete
-          </button>
+          </Link>
         </div>
       );
     }
