@@ -2,6 +2,8 @@ import posts from '../apis/posts';
 import history from '../history';
 import { SIGN_IN, SIGN_OUT, CREATE_POST, FETCH_POSTS, FETCH_POST, EDIT_POST, DELETE_POST } from './types';
 
+//replace posts from line 1 with something more descript - favs introduced
+
 export const signIn = (userId) => {
   return {
     type: SIGN_IN,
