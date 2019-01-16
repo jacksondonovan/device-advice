@@ -4,6 +4,7 @@ class PostShow extends React.Component {
   render() {
     return (
       <div>
+        //details here.
         PostShow
       </div>
     );
