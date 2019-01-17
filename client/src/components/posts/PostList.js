@@ -28,13 +28,14 @@ class PostList extends React.Component {
       return (
         <div className="item" key={post.id}>
           {this.renderAdmin(post)}
-          <i className="large middle aligned icon camera" />
+          <Link to={`/posts/show/${post.id}`}>
+            <i className="large middle aligned icon camera" />
+          </Link>
           <div className="content">
             {post.title}
             <div className="description">
               {post.description}
             </div>
-
           </div>
         </div>
       )
